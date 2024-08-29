@@ -19,6 +19,7 @@
       ./services/xserver.nix
       ./user/user.nix
       ./wm/hyprland.nix
+      ./wireshark.nix
     ];
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
