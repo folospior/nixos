@@ -20,4 +20,5 @@
       ./user/user.nix
       ./wm/hyprland.nix
     ];
+  system.stateVersion = "23.05";
 }

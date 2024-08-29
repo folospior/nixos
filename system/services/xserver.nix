@@ -3,10 +3,11 @@
 
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
     xkb = {
       layout = "pl";
       variant = "";
     };
-    libinput.enable = true;
+  };
+  services.displayManager.sddm.enable = true;
+  services.libinput.enable = true;
 }

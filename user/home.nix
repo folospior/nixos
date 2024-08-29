@@ -7,6 +7,8 @@
     ./app/comms/discord.nix
     ./app/terminal/alacritty.nix
     ./shells/bash.nix
+    ./app/vcs/git.nix
+    ./app/vcs/gh.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

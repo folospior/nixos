@@ -6,4 +6,5 @@
     shellAliases = {
       "vim" = "nvim";
     };
+  };
 }
