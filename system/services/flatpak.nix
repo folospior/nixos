@@ -1,20 +1,20 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
    services.flatpak = {
      enable = true;
-     remotes = [
-       {
-         name = "sober";
-         location = "https://sober.vinegarhq.org/repo";
-       }
+#    remotes = lib.mkOptionDefault [
+#      {
+#        name = "sober";
+#        location = "https://sober.vinegarhq.org/repo";
+#      }
 
-       {
-         name = "flathub";
-	 location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-       }
-     ];
-     packages = [
-       "org.vinegarhq.Sober"
-     ];
+#      {
+#        name = "flathub";
+#        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+#      }
+#    ];
+#    packages = [
+#       { appId = "org.vinegarhq.Sober"; origin = "sober"; }
+#    ];
   };
 }
