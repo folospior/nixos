@@ -9,6 +9,7 @@
     ./shells/bash.nix
     ./app/vcs/git.nix
     ./app/vcs/gh.nix
+    ./app/editor/nvim.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
