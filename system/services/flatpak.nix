@@ -5,7 +5,12 @@
      remotes = [
        {
          name = "sober";
-         location = "https://sober.vinegarhq.org/repo;
+         location = "https://sober.vinegarhq.org/repo";
+       }
+
+       {
+         name = "flathub";
+	 location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
        }
      ];
      packages = [
