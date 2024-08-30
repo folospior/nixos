@@ -11,6 +11,7 @@
       ./hardware/filesystems.nix
       ./hardware/kernel.nix
       ./hardware/networking.nix
+      ./hardware/nvidia.nix
       ./locale.nix
       ./nix-config.nix
       ./services/bluetooth.nix

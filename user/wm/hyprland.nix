@@ -1,12 +1,6 @@
 { config, pkgs, lib, ... }:
 {
 
-  let
-    mainMod = "SUPER";
-    generateWorkspaces = numberOfWorkspaces: lib.concatMap (n: [ 
-    "${mainMod}, ${toString n}, workspace, ${toString n}"
-    "${mainMod} SHIFT, ${toString n}, movetoworkspace, ${toString n}"
-    ]) (lib.range 1 numberOfWorkspaces);
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -96,7 +90,7 @@
 
       gestures.workspace_swipe = true;
 
-      "$mainMod" = "${mainMod}";
+      "$mainMod" = "SUPER";
 
       bind = [
         "$mainMod, Return, exec, $terminal"
@@ -106,18 +100,21 @@
 	"$mainMod, P, exec, $menu"
 	"$mainMod, I, pseudo"
 	"$mainMod, J, togglesplit"
-	"$mainmod, Escape, exec, $restartWaybar"
-	"$mainmod, O, exec, $changeWallpaper"
+	"$mainMod, Escape, exec, $restartWaybar"
+	"$mainMod, O, exec, $changeWallpaper"
 	", Print, exec, $screenshot"
 	"$mainMod, left, movefocus, l"
-	"$mainMod, right, movefocus. r"
+	"$mainMod, right, movefocus, r"
 	"$mainMod, up, movefocus, u"
 	"$mainMod, down, movefocus, d"
 	"$mainMod, S, togglespecialworkspace, magic"
 	"$mainMod SHIFT, S, movetoworkspace, special:magic"
 	"$mainMod, mouse_up, workspace, e-1"
 	"$mainMod, mouse_down, workspace, e+1"
-      ] ++ generateWorkspaces 9;
+      ] ++ lib.concatMap (n: [ 
+    "$mainMod, ${toString n}, workspace, ${toString n}"
+    "$mainMod SHIFT, ${toString n}, movetoworkspace, ${toString n}"
+    ]) (lib.range 1 9);
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
